@@ -279,7 +279,7 @@ const CONFIG = {
         titulo: "Pago de asistencia",
         precio: "200 €",
         descripcion: "Los profesionales que aún no son clientes Jaldún pueden acceder al curso mediante un pago directo de 200 €.",
-        destacado: "Importe bonificable: podrá descontarse como pago parcial de un pedido realizado tras la formación. Si no se realiza ningún pedido, se considerará como pago por la asistencia al curso.",
+        destacado: "Importe bonificable 100%. Te informaremos al registrarte.",
       },
     ],
     nota: "Consultar condiciones específicas con el equipo Jaldún.",
