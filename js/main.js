@@ -241,7 +241,8 @@
     if (!cd) return;
     setText("condiciones-eyebrow", cd.etiqueta || "");
     setText("condiciones-title", cd.titulo);
-    setText("condiciones-subtitle", cd.subtitulo);
+    const subtitle = document.getElementById("condiciones-subtitle");
+    if (subtitle) { if (cd.subtitulo) subtitle.textContent = cd.subtitulo; else subtitle.style.display = "none"; }
     const grid = $("#condiciones-grid");
     if (grid && Array.isArray(cd.opciones)) {
       grid.innerHTML = "";

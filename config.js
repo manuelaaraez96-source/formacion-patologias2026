@@ -264,9 +264,9 @@ const CONFIG = {
      8b. CONDICIONES DE ACCESO (precios / matrícula)
      --------------------------------------------------------------------- */
   condiciones: {
-    etiqueta: "Inversión y matrícula",
+    etiqueta: "Matrícula",
     titulo: "Condiciones de acceso al curso",
-    subtitulo: "Formación profesional en fitoterapia capilar Jaldún.",
+    subtitulo: "",
     opciones: [
       {
         etiqueta: "Opción 1 · Clientes Jaldún",

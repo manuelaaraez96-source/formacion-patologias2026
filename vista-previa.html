@@ -914,9 +914,9 @@ const CONFIG = {
      8b. CONDICIONES DE ACCESO (precios / matrícula)
      --------------------------------------------------------------------- */
   condiciones: {
-    etiqueta: "Inversión y matrícula",
+    etiqueta: "Matrícula",
     titulo: "Condiciones de acceso al curso",
-    subtitulo: "Formación profesional en fitoterapia capilar Jaldún.",
+    subtitulo: "",
     opciones: [
       {
         etiqueta: "Opción 1 · Clientes Jaldún",
@@ -1235,7 +1235,8 @@ const CONFIG = {
     if (!cd) return;
     setText("condiciones-eyebrow", cd.etiqueta || "");
     setText("condiciones-title", cd.titulo);
-    setText("condiciones-subtitle", cd.subtitulo);
+    const subtitle = document.getElementById("condiciones-subtitle");
+    if (subtitle) { if (cd.subtitulo) subtitle.textContent = cd.subtitulo; else subtitle.style.display = "none"; }
     const grid = $("#condiciones-grid");
     if (grid && Array.isArray(cd.opciones)) {
       grid.innerHTML = "";
