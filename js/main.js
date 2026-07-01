@@ -207,13 +207,11 @@
     const grid = $("#ponentes-grid");
     p.lista.forEach(po => {
       const redes = socialLinks(po.redes);
-      const cargoLinea = po.cargo + (po.empresa ? " · " + po.empresa : "");
       grid.appendChild(el("div", "speaker reveal",
         `<img class="speaker__photo" src="${po.foto}" alt="${po.nombre}" loading="lazy"
               onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22116%22 height=%22116%22%3E%3Crect width=%22116%22 height=%22116%22 fill=%22%23eeeefe%22/%3E%3C/svg%3E'">
          <div class="speaker__eyebrow">${po.etiqueta || "Ponente"}</div>
          <h3 class="speaker__name">${po.nombre}</h3>
-         <div class="speaker__role">${cargoLinea}</div>
          ${po.bio ? `<p class="speaker__bio">${po.bio}</p>` : ""}
          ${redes ? `<div class="speaker__social">${redes}</div>` : ""}`));
     });

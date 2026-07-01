@@ -303,11 +303,10 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
   color: var(--muted); margin-bottom: .5rem;
 }
 .speaker__name { font-family: var(--font-serif); font-weight: 700; font-size: 1.4rem; letter-spacing: -.01em; }
-.speaker__role {
+.speaker__bio {
   color: var(--lavender-deeper); font-weight: 600; font-size: .78rem;
   letter-spacing: .08em; text-transform: uppercase; margin-top: .55rem; line-height: 1.45;
 }
-.speaker__bio { color: var(--muted); font-size: .95rem; margin: 1rem 0 0; }
 .speaker__social { display: flex; gap: .6rem; }
 .speaker__social a {
   width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--hairline);

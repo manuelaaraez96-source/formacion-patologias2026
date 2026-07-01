@@ -337,11 +337,10 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
   color: var(--muted); margin-bottom: .5rem;
 }
 .speaker__name { font-family: var(--font-serif); font-weight: 700; font-size: 1.4rem; letter-spacing: -.01em; }
-.speaker__role {
+.speaker__bio {
   color: var(--lavender-deeper); font-weight: 600; font-size: .78rem;
   letter-spacing: .08em; text-transform: uppercase; margin-top: .55rem; line-height: 1.45;
 }
-.speaker__bio { color: var(--muted); font-size: .95rem; margin: 1rem 0 0; }
 .speaker__social { display: flex; gap: .6rem; }
 .speaker__social a {
   width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--hairline);
@@ -1198,13 +1197,11 @@ const CONFIG = {
     const grid = $("#ponentes-grid");
     p.lista.forEach(po => {
       const redes = socialLinks(po.redes);
-      const cargoLinea = po.cargo + (po.empresa ? " · " + po.empresa : "");
       grid.appendChild(el("div", "speaker reveal",
         `<img class="speaker__photo" src="${po.foto}" alt="${po.nombre}" loading="lazy"
               onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22116%22 height=%22116%22%3E%3Crect width=%22116%22 height=%22116%22 fill=%22%23eeeefe%22/%3E%3C/svg%3E'">
          <div class="speaker__eyebrow">${po.etiqueta || "Ponente"}</div>
          <h3 class="speaker__name">${po.nombre}</h3>
-         <div class="speaker__role">${cargoLinea}</div>
          ${po.bio ? `<p class="speaker__bio">${po.bio}</p>` : ""}
          ${redes ? `<div class="speaker__social">${redes}</div>` : ""}`));
     });
