@@ -253,6 +253,7 @@ const CONFIG = {
       { icono: "scissors", etiqueta: "Dirigido a",  valor: "Peluquería y estética" },
       { icono: "food",     etiqueta: "Incluye",     valor: "Comida" },
       { icono: "award",    etiqueta: "Certificado", valor: "De asistencia" },
+      { icono: "ticket",   etiqueta: "Plazas",      valor: "Completa el formulario y aseguramos tu plaza." },
       { icono: "euro",     etiqueta: "Precio",      valor: "Consúltalo al reservar tu plaza", enlace: { texto: "Consulta las condiciones de acceso", href: "#condiciones" } },
     ],
   },

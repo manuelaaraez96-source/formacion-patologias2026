@@ -261,7 +261,6 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
   border: 1px solid rgba(255,255,255,.13); border-radius: var(--r); overflow: hidden;
 }
 .facts .fact { background: #0e0e13; padding: 1.9rem 1.6rem 2.1rem; text-align: left; }
-.facts .fact:last-child { grid-column: span 2; }
 .facts .fact__icon {
   width: auto; height: auto; background: none; border-radius: 0;
   color: #fff; margin-bottom: 1.5rem; font-size: 1.3rem;
