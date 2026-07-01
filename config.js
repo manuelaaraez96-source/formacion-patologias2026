@@ -170,7 +170,7 @@ const CONFIG = {
         nombre: "Trino Miravete",
         cargo: "Director Técnico de Jaldún Salud Capilar",
         empresa: "",
-        bio: "Autor de los libros «El cuero cabelludo. Preguntas y respuestas» y «Tricología en la peluquería».",
+        bio: "Autor de los libros: «El cuero cabelludo. Preguntas y respuestas» y «Tricología en la peluquería».",
         redes: { linkedin: "", twitter: "", web: "" },
       },
       {
