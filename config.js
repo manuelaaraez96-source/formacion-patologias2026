@@ -41,11 +41,11 @@ const CONFIG = {
      3. HERO (primera pantalla)
      --------------------------------------------------------------------- */
   hero: {
-    etiqueta: "Formación presencial · Plazas limitadas",
-    titulo: "Principales patologías capilares",
+    etiqueta: "Formación superior",
+    titulo: "Principales patologías capilares que se encuentran en los centros de imagen personal",
     // Parte del título que se resalta con el subrayado lavanda (déjalo "" si no quieres)
     resalte: "patologías capilares",
-    subtitulo: "Formación Superior en Tricología aplicada a centros de imagen personal. Aprende a detectar las principales patologías del cuero cabelludo y a colaborar en su tratamiento, de la mano de los especialistas más innovadores del sector.",
+    subtitulo: "Formación Superior en Tricología aplicada a centros de imagen personal. Aprende a detectar las principales patologías del cuero cabelludo y cómo colaborar en su tratamiento.",
     // Fecha y hora de inicio para la cuenta atrás (formato AÑO-MES-DÍAThora:min:seg)
     cuentaAtras: "2026-09-28T09:30:00",
     // Datos clave que se muestran como “píldoras” bajo el subtítulo
@@ -65,7 +65,7 @@ const CONFIG = {
      --------------------------------------------------------------------- */
   sobreCurso: {
     titulo: "Convierte la salud capilar en el motor de tu centro",
-    descripcion: "Una formación práctica pensada para profesionales de la peluquería y la estética que quieren detectar a tiempo las patologías capilares, saber cuándo derivar al médico y colaborar con eficacia en su tratamiento.",
+    descripcion: "Una formación pensada para profesionales de peluquería y estética que quieren reconocer las patologías capilares que preocupan a sus clientes, saber derivar al médico y cómo colaborar en su tratamiento.",
     bloques: [
       {
         icono: "graduation",
@@ -75,12 +75,7 @@ const CONFIG = {
       {
         icono: "users",
         titulo: "A quién va dirigido",
-        texto: "Peluqueros, esteticistas, asesores de imagen personal y técnicos capilares que quieran dar un servicio de mayor valor y especializarse en salud capilar.",
-      },
-      {
-        icono: "puzzle",
-        titulo: "Qué problema resuelve",
-        texto: "La dificultad de distinguir lo estético de lo patológico. Sabrás detectar señales de alarma, cuándo derivar al médico y cómo colaborar en el tratamiento.",
+        texto: "Profesionales de peluquería y estética, que quieran dar un servicio de mayor valor y especializarse en salud capilar.",
       },
       {
         icono: "target",
@@ -96,7 +91,8 @@ const CONFIG = {
   temario: {
     etiqueta: "El programa que vamos a tratar",
     titulo: "Programa de ponencias",
-    subtitulo: "Un recorrido completo por las patologías capilares y su abordaje desde el centro de imagen personal.",
+    subtitulo: "Un recorrido completo por las principales patologías capilares y su abordaje desde el centro de imagen personal.",
+    nota: "Nota: El programa de la formación puede estar sujeto a modificaciones en función de la marcha del curso y del criterio de los ponentes.",
     temas: [
       {
         numero: "01",
@@ -115,48 +111,48 @@ const CONFIG = {
       },
       {
         numero: "04",
-        titulo: "Nutrición y salud capilar",
-        texto: "Nutrientes esenciales para el correcto funcionamiento de la piel y el cabello, y la importancia de la suplementación.",
-      },
-      {
-        numero: "05",
-        titulo: "Pediculosis y salud capilar",
-        texto: "Detección y abordaje de la pediculosis desde el centro de imagen personal.",
-      },
-      {
-        numero: "06",
-        titulo: "Crecimiento capilar y derivación médica",
-        texto: "Cuánto crece el cabello y por qué a algunas personas les crece poco. Cuándo y cómo derivar al médico ante una anomalía.",
-      },
-      {
-        numero: "07",
         titulo: "Tiroides, inflamación e inmunidad",
         texto: "Cómo afecta la glándula tiroides a la piel y el cabello, y la influencia de la inflamación y el sistema inmunológico en la caída. Tratamientos médicos.",
       },
       {
-        numero: "08",
+        numero: "05",
         titulo: "Principales patologías y cómo actuar",
         texto: "Alopecia areata y frontal fibrosante, dermatitis seborreica aguda, psoriasis, foliculitis y alopecia androgenética. Cómo detectarlas y actuar.",
       },
       {
-        numero: "09",
+        numero: "06",
         titulo: "Enfermedades oncológicas y cabello",
-        texto: "Cómo afectan al cabello y cómo actuar desde la peluquería para acompañar al cliente.",
+        texto: "Cómo afectan al cabello y cómo actuar desde la peluquería.",
       },
       {
-        numero: "10",
+        numero: "07",
         titulo: "Menopausia, piel y cabello",
         texto: "Cambios capilares y de la piel asociados a la menopausia.",
       },
       {
-        numero: "11",
+        numero: "08",
         titulo: "Oxigenación del cuero cabelludo",
         texto: "Un servicio terapéutico de eficacia técnica, salud y relax dentro del salón de peluquería.",
       },
       {
-        numero: "12",
+        numero: "09",
         titulo: "Enfoque fitoterapéutico Jaldún",
         texto: "Tratamiento médico y fitocosmético Jaldún, principios activos y sistema integral para la alopecia y las anomalías capilares.",
+      },
+      {
+        numero: "10",
+        titulo: "Nutrición y salud capilar",
+        texto: "Nutrientes esenciales para el correcto funcionamiento de la piel y el cabello, y la importancia de la suplementación.",
+      },
+      {
+        numero: "11",
+        titulo: "Pediculosis y salud capilar",
+        texto: "Detección y abordaje de la pediculosis desde el centro de imagen personal.",
+      },
+      {
+        numero: "12",
+        titulo: "Crecimiento capilar y derivación médica",
+        texto: "Cuánto crece el cabello y por qué a algunas personas les crece poco.",
       },
     ],
   },
@@ -257,24 +253,7 @@ const CONFIG = {
       { icono: "scissors", etiqueta: "Dirigido a",  valor: "Peluquería y estética" },
       { icono: "food",     etiqueta: "Incluye",     valor: "Comida" },
       { icono: "award",    etiqueta: "Certificado", valor: "De asistencia" },
-      { icono: "ticket",   etiqueta: "Plazas",      valor: "Limitadas" },
       { icono: "euro",     etiqueta: "Precio",      valor: "Consúltalo al reservar tu plaza", enlace: { texto: "Consulta las condiciones de acceso", href: "#condiciones" } },
-    ],
-  },
-
-  /* ---------------------------------------------------------------------
-     8. BENEFICIOS
-     --------------------------------------------------------------------- */
-  beneficios: {
-    titulo: "Lo que te llevas",
-    subtitulo: "Una formación que marca la diferencia en tu centro.",
-    lista: [
-      { icono: "stethoscope", titulo: "Especialistas de referencia", texto: "Aprende de médicos, nutricionistas y técnicos capilares del sector." },
-      { icono: "search",      titulo: "Detección de patologías",     texto: "Reconoce las principales patologías del cuero cabelludo y el cabello." },
-      { icono: "heart",       titulo: "Colabora en el tratamiento",  texto: "Sabrás cuándo derivar al médico y cómo apoyar desde tu centro." },
-      { icono: "award",       titulo: "Certificado de asistencia",   texto: "Acredita tu formación al finalizar la jornada." },
-      { icono: "food",        titulo: "Comida incluida",             texto: "La jornada incluye la comida para todos los asistentes." },
-      { icono: "growth",      titulo: "Haz crecer tu centro",        texto: "Diferénciate ofreciendo un servicio de salud capilar de valor." },
     ],
   },
 
@@ -306,47 +285,13 @@ const CONFIG = {
   },
 
   /* ---------------------------------------------------------------------
-     9. FAQ (preguntas frecuentes — desplegables)
-     --------------------------------------------------------------------- */
-  faq: {
-    titulo: "Preguntas frecuentes",
-    subtitulo: "Resolvemos tus dudas antes de reservar.",
-    preguntas: [
-      {
-        pregunta: "¿A quién está dirigida esta formación?",
-        respuesta: "A profesionales de la peluquería, la estética y la asesoría de imagen personal que quieran especializarse en salud capilar. No es necesario tener formación médica previa.",
-      },
-      {
-        pregunta: "¿Necesito conocimientos médicos previos?",
-        respuesta: "No. La formación está planteada para profesionales del sector de la imagen personal. Aprenderás a detectar señales y a saber cuándo derivar al médico.",
-      },
-      {
-        pregunta: "¿Dónde y cuándo se celebra?",
-        respuesta: "El lunes 28 de septiembre de 2026, de 09:30 a 19:00 h, en el Centro de Congresos de Elche.",
-      },
-      {
-        pregunta: "¿Qué incluye la inscripción?",
-        respuesta: "La formación completa, la comida y un certificado de asistencia.",
-      },
-      {
-        pregunta: "¿Recibiré un certificado?",
-        respuesta: "Sí, al finalizar la jornada recibirás un certificado de asistencia.",
-      },
-      {
-        pregunta: "¿Las plazas son limitadas?",
-        respuesta: "Sí, el aforo es limitado. Te recomendamos reservar tu plaza cuanto antes para asegurar tu sitio.",
-      },
-    ],
-  },
-
-  /* ---------------------------------------------------------------------
      10. FORMULARIO
      --------------------------------------------------------------------- */
   formulario: {
     etiqueta: "Inscripción",                 // etiqueta pequeña sobre el título
     titulo: "Reserva tu plaza",
-    subtitulo: "Completa el formulario y aseguramos tu sitio. Plazas limitadas.",
-    badge: "Plazas limitadas",               // pastilla lavanda dentro de la tarjeta
+    subtitulo: "Completa el formulario y aseguramos tu plaza.",
+    badge: "",               // pastilla lavanda dentro de la tarjeta
     // Lista de beneficios (con check) — añade o quita los que quieras
     beneficios: [
       "Formación completa con médicos y especialistas del sector",

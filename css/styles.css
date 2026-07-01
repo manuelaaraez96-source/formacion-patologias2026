@@ -134,7 +134,7 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
 .hero__badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lavender-deep); }
 .hero__title {
   font-family: var(--font-serif); font-weight: 600;
-  font-size: clamp(2.4rem, 6.5vw, 4.4rem); line-height: 1.05; letter-spacing: -0.02em;
+  font-size: clamp(1.9rem, 4.6vw, 3.1rem); line-height: 1.12; letter-spacing: -0.01em;
 }
 .hero__subtitle { margin-top: 1.5rem; font-size: clamp(1.05rem, 2.2vw, 1.22rem); color: var(--muted); max-width: 540px; }
 .hero__meta { display: flex; flex-wrap: wrap; gap: .4rem 0; margin: 1.9rem 0; max-width: 560px; }
@@ -336,6 +336,7 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
   padding: 1.05rem 1.2rem; color: var(--ink); font-size: .92rem; line-height: 1.55;
 }
 .condiciones-nota { text-align: center; color: var(--muted); font-size: .92rem; margin-top: 2rem; }
+.temario-nota { text-align: center; color: var(--muted); font-size: .92rem; margin-top: 2rem; }
 
 .accordion { display: flex; flex-direction: column; border-top: 1px solid var(--hairline); }
 .acc-item { border-bottom: 1px solid var(--hairline); }

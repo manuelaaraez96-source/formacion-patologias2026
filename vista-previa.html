@@ -12,14 +12,14 @@
   <!-- Open Graph (al compartir en WhatsApp, Facebook, Instagram...) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Principales patologías capilares · Formación Superior Jaldún" />
-  <meta property="og:description" content="Tricología aplicada a centros de imagen personal. 28 de septiembre de 2026, Elche. Plazas limitadas. Incluye comida y certificado." />
+  <meta property="og:description" content="Tricología aplicada a centros de imagen personal. 28 de septiembre de 2026, Elche. Incluye comida y certificado." />
   <meta property="og:image" content="assets/og-image.jpg" />
   <meta property="og:url" content="https://www.jaldun.com/formacion" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Principales patologías capilares · Formación Superior Jaldún" />
-  <meta name="twitter:description" content="Tricología aplicada a centros de imagen personal. 28 de septiembre de 2026, Elche. Plazas limitadas." />
+  <meta name="twitter:description" content="Tricología aplicada a centros de imagen personal. 28 de septiembre de 2026, Elche." />
   <meta name="twitter:image" content="assets/og-image.jpg" />
 
   <!-- Favicon -->
@@ -168,7 +168,7 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
 .hero__badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lavender-deep); }
 .hero__title {
   font-family: var(--font-serif); font-weight: 600;
-  font-size: clamp(2.4rem, 6.5vw, 4.4rem); line-height: 1.05; letter-spacing: -0.02em;
+  font-size: clamp(1.9rem, 4.6vw, 3.1rem); line-height: 1.12; letter-spacing: -0.01em;
 }
 .hero__subtitle { margin-top: 1.5rem; font-size: clamp(1.05rem, 2.2vw, 1.22rem); color: var(--muted); max-width: 540px; }
 .hero__meta { display: flex; flex-wrap: wrap; gap: .4rem 0; margin: 1.9rem 0; max-width: 560px; }
@@ -370,6 +370,7 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
   padding: 1.05rem 1.2rem; color: var(--ink); font-size: .92rem; line-height: 1.55;
 }
 .condiciones-nota { text-align: center; color: var(--muted); font-size: .92rem; margin-top: 2rem; }
+.temario-nota { text-align: center; color: var(--muted); font-size: .92rem; margin-top: 2rem; }
 
 .accordion { display: flex; flex-direction: column; border-top: 1px solid var(--hairline); }
 .acc-item { border-bottom: 1px solid var(--hairline); }
@@ -496,7 +497,6 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
         <a href="#sobre">El curso</a>
         <a href="#temario">Temario</a>
         <a href="#ponentes">Ponentes</a>
-        <a href="#faq">FAQ</a>
       </nav>
       <a href="#formulario" class="btn btn--primary btn--sm">Reserva tu plaza</a>
     </div>
@@ -553,6 +553,7 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
           <p class="section__subtitle" id="temario-subtitle"></p>
         </div>
         <div class="topics" id="temario-grid"></div>
+        <p class="temario-nota" id="temario-nota"></p>
       </div>
     </section>
 
@@ -578,17 +579,6 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
       </div>
     </section>
 
-    <!-- ===================== 6. BENEFICIOS ===================== -->
-    <section class="section" id="beneficios">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2 class="section__title" id="beneficios-title"></h2>
-          <p class="section__subtitle" id="beneficios-subtitle"></p>
-        </div>
-        <div class="grid grid--3" id="beneficios-grid"></div>
-      </div>
-    </section>
-
     <!-- ===================== 6b. CONDICIONES DE ACCESO ===================== -->
     <section class="section section--alt" id="condiciones">
       <div class="container">
@@ -599,17 +589,6 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
         </div>
         <div class="grid grid--2" id="condiciones-grid"></div>
         <p class="condiciones-nota" id="condiciones-nota"></p>
-      </div>
-    </section>
-
-    <!-- ===================== 7. FAQ ===================== -->
-    <section class="section section--alt" id="faq">
-      <div class="container container--narrow">
-        <div class="section__head reveal">
-          <h2 class="section__title" id="faq-title"></h2>
-          <p class="section__subtitle" id="faq-subtitle"></p>
-        </div>
-        <div class="accordion" id="faq-list"></div>
       </div>
     </section>
 
@@ -711,11 +690,11 @@ const CONFIG = {
      3. HERO (primera pantalla)
      --------------------------------------------------------------------- */
   hero: {
-    etiqueta: "Formación presencial · Plazas limitadas",
-    titulo: "Principales patologías capilares",
+    etiqueta: "Formación superior",
+    titulo: "Principales patologías capilares que se encuentran en los centros de imagen personal",
     // Parte del título que se resalta con el subrayado lavanda (déjalo "" si no quieres)
     resalte: "patologías capilares",
-    subtitulo: "Formación Superior en Tricología aplicada a centros de imagen personal. Aprende a detectar las principales patologías del cuero cabelludo y a colaborar en su tratamiento, de la mano de los especialistas más innovadores del sector.",
+    subtitulo: "Formación Superior en Tricología aplicada a centros de imagen personal. Aprende a detectar las principales patologías del cuero cabelludo y cómo colaborar en su tratamiento.",
     // Fecha y hora de inicio para la cuenta atrás (formato AÑO-MES-DÍAThora:min:seg)
     cuentaAtras: "2026-09-28T09:30:00",
     // Datos clave que se muestran como “píldoras” bajo el subtítulo
@@ -735,7 +714,7 @@ const CONFIG = {
      --------------------------------------------------------------------- */
   sobreCurso: {
     titulo: "Convierte la salud capilar en el motor de tu centro",
-    descripcion: "Una formación práctica pensada para profesionales de la peluquería y la estética que quieren detectar a tiempo las patologías capilares, saber cuándo derivar al médico y colaborar con eficacia en su tratamiento.",
+    descripcion: "Una formación pensada para profesionales de peluquería y estética que quieren reconocer las patologías capilares que preocupan a sus clientes, saber derivar al médico y cómo colaborar en su tratamiento.",
     bloques: [
       {
         icono: "graduation",
@@ -745,12 +724,7 @@ const CONFIG = {
       {
         icono: "users",
         titulo: "A quién va dirigido",
-        texto: "Peluqueros, esteticistas, asesores de imagen personal y técnicos capilares que quieran dar un servicio de mayor valor y especializarse en salud capilar.",
-      },
-      {
-        icono: "puzzle",
-        titulo: "Qué problema resuelve",
-        texto: "La dificultad de distinguir lo estético de lo patológico. Sabrás detectar señales de alarma, cuándo derivar al médico y cómo colaborar en el tratamiento.",
+        texto: "Profesionales de peluquería y estética, que quieran dar un servicio de mayor valor y especializarse en salud capilar.",
       },
       {
         icono: "target",
@@ -766,7 +740,8 @@ const CONFIG = {
   temario: {
     etiqueta: "El programa que vamos a tratar",
     titulo: "Programa de ponencias",
-    subtitulo: "Un recorrido completo por las patologías capilares y su abordaje desde el centro de imagen personal.",
+    subtitulo: "Un recorrido completo por las principales patologías capilares y su abordaje desde el centro de imagen personal.",
+    nota: "Nota: El programa de la formación puede estar sujeto a modificaciones en función de la marcha del curso y del criterio de los ponentes.",
     temas: [
       {
         numero: "01",
@@ -785,48 +760,48 @@ const CONFIG = {
       },
       {
         numero: "04",
-        titulo: "Nutrición y salud capilar",
-        texto: "Nutrientes esenciales para el correcto funcionamiento de la piel y el cabello, y la importancia de la suplementación.",
-      },
-      {
-        numero: "05",
-        titulo: "Pediculosis y salud capilar",
-        texto: "Detección y abordaje de la pediculosis desde el centro de imagen personal.",
-      },
-      {
-        numero: "06",
-        titulo: "Crecimiento capilar y derivación médica",
-        texto: "Cuánto crece el cabello y por qué a algunas personas les crece poco. Cuándo y cómo derivar al médico ante una anomalía.",
-      },
-      {
-        numero: "07",
         titulo: "Tiroides, inflamación e inmunidad",
         texto: "Cómo afecta la glándula tiroides a la piel y el cabello, y la influencia de la inflamación y el sistema inmunológico en la caída. Tratamientos médicos.",
       },
       {
-        numero: "08",
+        numero: "05",
         titulo: "Principales patologías y cómo actuar",
         texto: "Alopecia areata y frontal fibrosante, dermatitis seborreica aguda, psoriasis, foliculitis y alopecia androgenética. Cómo detectarlas y actuar.",
       },
       {
-        numero: "09",
+        numero: "06",
         titulo: "Enfermedades oncológicas y cabello",
-        texto: "Cómo afectan al cabello y cómo actuar desde la peluquería para acompañar al cliente.",
+        texto: "Cómo afectan al cabello y cómo actuar desde la peluquería.",
       },
       {
-        numero: "10",
+        numero: "07",
         titulo: "Menopausia, piel y cabello",
         texto: "Cambios capilares y de la piel asociados a la menopausia.",
       },
       {
-        numero: "11",
+        numero: "08",
         titulo: "Oxigenación del cuero cabelludo",
         texto: "Un servicio terapéutico de eficacia técnica, salud y relax dentro del salón de peluquería.",
       },
       {
-        numero: "12",
+        numero: "09",
         titulo: "Enfoque fitoterapéutico Jaldún",
         texto: "Tratamiento médico y fitocosmético Jaldún, principios activos y sistema integral para la alopecia y las anomalías capilares.",
+      },
+      {
+        numero: "10",
+        titulo: "Nutrición y salud capilar",
+        texto: "Nutrientes esenciales para el correcto funcionamiento de la piel y el cabello, y la importancia de la suplementación.",
+      },
+      {
+        numero: "11",
+        titulo: "Pediculosis y salud capilar",
+        texto: "Detección y abordaje de la pediculosis desde el centro de imagen personal.",
+      },
+      {
+        numero: "12",
+        titulo: "Crecimiento capilar y derivación médica",
+        texto: "Cuánto crece el cabello y por qué a algunas personas les crece poco.",
       },
     ],
   },
@@ -927,24 +902,7 @@ const CONFIG = {
       { icono: "scissors", etiqueta: "Dirigido a",  valor: "Peluquería y estética" },
       { icono: "food",     etiqueta: "Incluye",     valor: "Comida" },
       { icono: "award",    etiqueta: "Certificado", valor: "De asistencia" },
-      { icono: "ticket",   etiqueta: "Plazas",      valor: "Limitadas" },
       { icono: "euro",     etiqueta: "Precio",      valor: "Consúltalo al reservar tu plaza", enlace: { texto: "Consulta las condiciones de acceso", href: "#condiciones" } },
-    ],
-  },
-
-  /* ---------------------------------------------------------------------
-     8. BENEFICIOS
-     --------------------------------------------------------------------- */
-  beneficios: {
-    titulo: "Lo que te llevas",
-    subtitulo: "Una formación que marca la diferencia en tu centro.",
-    lista: [
-      { icono: "stethoscope", titulo: "Especialistas de referencia", texto: "Aprende de médicos, nutricionistas y técnicos capilares del sector." },
-      { icono: "search",      titulo: "Detección de patologías",     texto: "Reconoce las principales patologías del cuero cabelludo y el cabello." },
-      { icono: "heart",       titulo: "Colabora en el tratamiento",  texto: "Sabrás cuándo derivar al médico y cómo apoyar desde tu centro." },
-      { icono: "award",       titulo: "Certificado de asistencia",   texto: "Acredita tu formación al finalizar la jornada." },
-      { icono: "food",        titulo: "Comida incluida",             texto: "La jornada incluye la comida para todos los asistentes." },
-      { icono: "growth",      titulo: "Haz crecer tu centro",        texto: "Diferénciate ofreciendo un servicio de salud capilar de valor." },
     ],
   },
 
@@ -976,47 +934,13 @@ const CONFIG = {
   },
 
   /* ---------------------------------------------------------------------
-     9. FAQ (preguntas frecuentes — desplegables)
-     --------------------------------------------------------------------- */
-  faq: {
-    titulo: "Preguntas frecuentes",
-    subtitulo: "Resolvemos tus dudas antes de reservar.",
-    preguntas: [
-      {
-        pregunta: "¿A quién está dirigida esta formación?",
-        respuesta: "A profesionales de la peluquería, la estética y la asesoría de imagen personal que quieran especializarse en salud capilar. No es necesario tener formación médica previa.",
-      },
-      {
-        pregunta: "¿Necesito conocimientos médicos previos?",
-        respuesta: "No. La formación está planteada para profesionales del sector de la imagen personal. Aprenderás a detectar señales y a saber cuándo derivar al médico.",
-      },
-      {
-        pregunta: "¿Dónde y cuándo se celebra?",
-        respuesta: "El lunes 28 de septiembre de 2026, de 09:30 a 19:00 h, en el Centro de Congresos de Elche.",
-      },
-      {
-        pregunta: "¿Qué incluye la inscripción?",
-        respuesta: "La formación completa, la comida y un certificado de asistencia.",
-      },
-      {
-        pregunta: "¿Recibiré un certificado?",
-        respuesta: "Sí, al finalizar la jornada recibirás un certificado de asistencia.",
-      },
-      {
-        pregunta: "¿Las plazas son limitadas?",
-        respuesta: "Sí, el aforo es limitado. Te recomendamos reservar tu plaza cuanto antes para asegurar tu sitio.",
-      },
-    ],
-  },
-
-  /* ---------------------------------------------------------------------
      10. FORMULARIO
      --------------------------------------------------------------------- */
   formulario: {
     etiqueta: "Inscripción",                 // etiqueta pequeña sobre el título
     titulo: "Reserva tu plaza",
-    subtitulo: "Completa el formulario y aseguramos tu sitio. Plazas limitadas.",
-    badge: "Plazas limitadas",               // pastilla lavanda dentro de la tarjeta
+    subtitulo: "Completa el formulario y aseguramos tu plaza.",
+    badge: "",               // pastilla lavanda dentro de la tarjeta
     // Lista de beneficios (con check) — añade o quita los que quieras
     beneficios: [
       "Formación completa con médicos y especialistas del sector",
@@ -1254,6 +1178,8 @@ const CONFIG = {
          <h3 class="card__title">${tema.titulo}</h3>
          <p class="card__text">${tema.texto}</p>`));
     });
+    const nota = document.getElementById("temario-nota");
+    if (nota) { if (t.nota) nota.textContent = t.nota; else nota.style.display = "none"; }
   }
 
   function socialLinks(redes, baseClass) {
@@ -1298,19 +1224,6 @@ const CONFIG = {
     });
   }
 
-  function renderBeneficios(c) {
-    const b = c.beneficios;
-    setText("beneficios-title", b.titulo);
-    setText("beneficios-subtitle", b.subtitulo);
-    const grid = $("#beneficios-grid");
-    b.lista.forEach(item => {
-      grid.appendChild(el("div", "card reveal",
-        `<div class="card__icon">${iconHTML(item.icono)}</div>
-         <h3 class="card__title">${item.titulo}</h3>
-         <p class="card__text">${item.texto}</p>`));
-    });
-  }
-
   function renderCondiciones(c) {
     const cd = c.condiciones;
     if (!cd) return;
@@ -1331,30 +1244,6 @@ const CONFIG = {
     }
     const nota = document.getElementById("condiciones-nota");
     if (nota) { if (cd.nota) nota.textContent = cd.nota; else nota.style.display = "none"; }
-  }
-
-  function renderFAQ(c) {
-    const f = c.faq;
-    setText("faq-title", f.titulo);
-    setText("faq-subtitle", f.subtitulo);
-    const list = $("#faq-list");
-    f.preguntas.forEach(q => {
-      const item = el("div", "acc-item");
-      item.innerHTML =
-        `<button class="acc-head" type="button" aria-expanded="false">
-           <span>${q.pregunta}</span>
-           <span class="acc-icon" aria-hidden="true"></span>
-         </button>
-         <div class="acc-body"><p>${q.respuesta}</p></div>`;
-      const head = $(".acc-head", item);
-      const body = $(".acc-body", item);
-      head.addEventListener("click", () => {
-        const isOpen = item.classList.toggle("open");
-        head.setAttribute("aria-expanded", isOpen);
-        body.style.maxHeight = isOpen ? body.scrollHeight + "px" : "0";
-      });
-      list.appendChild(item);
-    });
   }
 
   function renderFormulario(c) {
@@ -1473,9 +1362,7 @@ const CONFIG = {
     renderTemario(CONFIG);
     renderPonentes(CONFIG);
     renderEvento(CONFIG);
-    renderBeneficios(CONFIG);
     renderCondiciones(CONFIG);
-    renderFAQ(CONFIG);
     renderFormulario(CONFIG);
     renderFooter(CONFIG);
     renderSchema(CONFIG);

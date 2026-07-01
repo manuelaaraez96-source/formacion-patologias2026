@@ -188,6 +188,8 @@
          <h3 class="card__title">${tema.titulo}</h3>
          <p class="card__text">${tema.texto}</p>`));
     });
+    const nota = document.getElementById("temario-nota");
+    if (nota) { if (t.nota) nota.textContent = t.nota; else nota.style.display = "none"; }
   }
 
   function socialLinks(redes, baseClass) {
@@ -232,19 +234,6 @@
     });
   }
 
-  function renderBeneficios(c) {
-    const b = c.beneficios;
-    setText("beneficios-title", b.titulo);
-    setText("beneficios-subtitle", b.subtitulo);
-    const grid = $("#beneficios-grid");
-    b.lista.forEach(item => {
-      grid.appendChild(el("div", "card reveal",
-        `<div class="card__icon">${iconHTML(item.icono)}</div>
-         <h3 class="card__title">${item.titulo}</h3>
-         <p class="card__text">${item.texto}</p>`));
-    });
-  }
-
   function renderCondiciones(c) {
     const cd = c.condiciones;
     if (!cd) return;
@@ -265,30 +254,6 @@
     }
     const nota = document.getElementById("condiciones-nota");
     if (nota) { if (cd.nota) nota.textContent = cd.nota; else nota.style.display = "none"; }
-  }
-
-  function renderFAQ(c) {
-    const f = c.faq;
-    setText("faq-title", f.titulo);
-    setText("faq-subtitle", f.subtitulo);
-    const list = $("#faq-list");
-    f.preguntas.forEach(q => {
-      const item = el("div", "acc-item");
-      item.innerHTML =
-        `<button class="acc-head" type="button" aria-expanded="false">
-           <span>${q.pregunta}</span>
-           <span class="acc-icon" aria-hidden="true"></span>
-         </button>
-         <div class="acc-body"><p>${q.respuesta}</p></div>`;
-      const head = $(".acc-head", item);
-      const body = $(".acc-body", item);
-      head.addEventListener("click", () => {
-        const isOpen = item.classList.toggle("open");
-        head.setAttribute("aria-expanded", isOpen);
-        body.style.maxHeight = isOpen ? body.scrollHeight + "px" : "0";
-      });
-      list.appendChild(item);
-    });
   }
 
   function renderFormulario(c) {
@@ -407,9 +372,7 @@
     renderTemario(CONFIG);
     renderPonentes(CONFIG);
     renderEvento(CONFIG);
-    renderBeneficios(CONFIG);
     renderCondiciones(CONFIG);
-    renderFAQ(CONFIG);
     renderFormulario(CONFIG);
     renderFooter(CONFIG);
     renderSchema(CONFIG);
