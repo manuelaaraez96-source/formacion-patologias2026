@@ -202,7 +202,7 @@ const CONFIG = {
         nombre: "José Espinosa",
         cargo: "Nutricionista dietista",
         empresa: "Instituto de Naturopatía",
-        bio: "Nutricionista dietista, experto en nutrición aplicada a la salud de la piel y el cabello.",
+        bio: "Nutricionista dietista. Instituto de Naturopatía.",
         redes: { linkedin: "", twitter: "", web: "" },
       },
       {
