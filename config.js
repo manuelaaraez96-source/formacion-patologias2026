@@ -316,7 +316,7 @@ const CONFIG = {
      11. FOOTER / CONTACTO
      --------------------------------------------------------------------- */
   footer: {
-    descripcion: "Jaldún Salud Capilar. Formación e investigación en tricología aplicada a centros de imagen personal.",
+    descripcion: "Tricología aplicada a centros de imagen personal.",
     contacto: "Rafael Moreno",
     email: "jaldun@jaldun.com",
     telefono: "+34 601 18 92 89",
