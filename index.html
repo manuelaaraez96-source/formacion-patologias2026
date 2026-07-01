@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Metadatos SEO (también se refrescan desde config.js, pero estos valores
+       estáticos son los que leen WhatsApp/Facebook/Instagram al compartir). -->
+  <title>Formación Superior en Tricología | Principales Patologías Capilares · Jaldún</title>
+  <meta name="description" content="Formación presencial para profesionales de peluquería y estética: aprende a detectar las principales patologías capilares y a colaborar en su tratamiento. 28 de septiembre, Elche. Incluye comida y certificado." />
+
+  <!-- Open Graph (al compartir en WhatsApp, Facebook, Instagram...) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Principales patologías capilares · Formación Superior Jaldún" />
+  <meta property="og:description" content="Tricología aplicada a centros de imagen personal. 28 de septiembre de 2026, Elche. Plazas limitadas. Incluye comida y certificado." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:url" content="https://www.jaldun.com/formacion" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Principales patologías capilares · Formación Superior Jaldún" />
+  <meta name="twitter:description" content="Tricología aplicada a centros de imagen personal. 28 de septiembre de 2026, Elche. Plazas limitadas." />
+  <meta name="twitter:image" content="assets/og-image.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Tipografía del programa: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== BARRA SUPERIOR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#hero" class="navbar__logo" id="nav-logo">Jaldún</a>
+      <nav class="navbar__links" id="nav-links">
+        <a href="#sobre">El curso</a>
+        <a href="#temario">Temario</a>
+        <a href="#ponentes">Ponentes</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#formulario" class="btn btn--primary btn--sm">Reserva tu plaza</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== 1. HERO ===================== -->
+    <section class="hero" id="hero">
+      <video class="hero__bg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="assets/hero-bg.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__bg-overlay" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <span class="hero__badge" id="hero-badge"></span>
+          <h1 class="hero__title" id="hero-title"></h1>
+          <p class="hero__subtitle" id="hero-subtitle"></p>
+          <div class="hero__meta" id="hero-meta"></div>
+          <div class="hero__actions">
+            <a href="#formulario" class="btn btn--primary btn--lg" id="hero-cta"></a>
+            <a href="#temario" class="btn btn--ghost btn--lg" id="hero-cta2"></a>
+          </div>
+          <div class="countdown" id="countdown" aria-label="Cuenta atrás para el evento"></div>
+        </div>
+        <div class="hero__media reveal">
+          <div class="hero__image-wrap">
+            <img id="hero-image" src="" alt="" loading="eager" />
+          </div>
+        </div>
+      </div>
+      <div class="hero__glow" aria-hidden="true"></div>
+    </section>
+
+    <!-- Franja de información (viñetas) -->
+    <div class="ticker" id="ticker"></div>
+
+    <!-- ===================== 2. SOBRE EL CURSO ===================== -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="sobre-title"></h2>
+          <p class="section__subtitle" id="sobre-desc"></p>
+        </div>
+        <div class="grid grid--2" id="sobre-bloques"></div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. TEMARIO ===================== -->
+    <section class="section section--alt" id="temario">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow" id="temario-eyebrow"></span>
+          <h2 class="section__title" id="temario-title"></h2>
+          <p class="section__subtitle" id="temario-subtitle"></p>
+        </div>
+        <div class="topics" id="temario-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. PONENTES ===================== -->
+    <section class="section section--hairs" id="ponentes">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="ponentes-title"></h2>
+          <p class="section__subtitle" id="ponentes-subtitle"></p>
+        </div>
+        <div class="grid grid--speakers" id="ponentes-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. INFO DEL EVENTO ===================== -->
+    <section class="section section--dark" id="evento">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="evento-title"></h2>
+          <p class="section__subtitle" id="evento-subtitle"></p>
+        </div>
+        <div class="facts" id="evento-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. BENEFICIOS ===================== -->
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="beneficios-title"></h2>
+          <p class="section__subtitle" id="beneficios-subtitle"></p>
+        </div>
+        <div class="grid grid--3" id="beneficios-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== 6b. CONDICIONES DE ACCESO ===================== -->
+    <section class="section section--alt" id="condiciones">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow" id="condiciones-eyebrow"></span>
+          <h2 class="section__title" id="condiciones-title"></h2>
+          <p class="section__subtitle" id="condiciones-subtitle"></p>
+        </div>
+        <div class="grid grid--2" id="condiciones-grid"></div>
+        <p class="condiciones-nota" id="condiciones-nota"></p>
+      </div>
+    </section>
+
+    <!-- ===================== 7. FAQ ===================== -->
+    <section class="section section--alt" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="faq-title"></h2>
+          <p class="section__subtitle" id="faq-subtitle"></p>
+        </div>
+        <div class="accordion" id="faq-list"></div>
+      </div>
+    </section>
+
+    <!-- ===================== 8. FORMULARIO ===================== -->
+    <section class="section form-section" id="formulario">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <span class="eyebrow" id="form-eyebrow"></span>
+          <h2 class="section__title" id="form-title"></h2>
+          <p class="section__subtitle" id="form-subtitle"></p>
+        </div>
+        <div class="form-card reveal">
+          <span class="form-badge" id="form-badge"></span>
+          <ul class="form-benefits" id="form-benefits"></ul>
+          <div class="form-divider"></div>
+          <span class="eyebrow form-embed-label" id="form-embed-label"></span>
+
+          <!-- Formulario embebido (iframe). Se inyecta desde js/main.js
+               usando los datos de config.js (sección "formulario"). -->
+          <div id="form-embed"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== 9. FOOTER ===================== -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo" id="footer-logo">Jaldún</span>
+        <p id="footer-desc"></p>
+        <div class="footer__social" id="footer-social"></div>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <span id="footer-contacto"></span>
+        <a id="footer-phone" href="#"></a>
+        <a id="footer-email" href="#"></a>
+        <a id="footer-web" href="#" target="_blank" rel="noopener"></a>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <div id="footer-links"></div>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <span id="footer-copy"></span>
+    </div>
+  </footer>
+
+  <!-- CTA flotante en móvil -->
+  <a href="#formulario" class="floating-cta" id="floating-cta">Reserva tu plaza</a>
+
+  <!-- Datos estructurados (Schema.org Event) — se rellenan desde JS -->
+  <script type="application/ld+json" id="schema-event"></script>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
