@@ -226,7 +226,7 @@ const CONFIG = {
         nombre: "David Martínez",
         cargo: "Director Técnico de Centros Capilares",
         empresa: "Jaldún",
-        bio: "Director Técnico de los Centros Capilares Jaldún.",
+        bio: "Director Técnico Centros Capilares Jaldún.",
         redes: { linkedin: "", twitter: "", web: "" },
       },
       {
