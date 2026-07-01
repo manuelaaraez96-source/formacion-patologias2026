@@ -194,7 +194,7 @@ const CONFIG = {
         nombre: "Dra. Rosa Miralles Gil",
         cargo: "Especialista en salud mental",
         empresa: "",
-        bio: "Médica especialista en salud mental y su relación con la salud capilar.",
+        bio: "Médica especialista en salud mental.",
         redes: { linkedin: "", twitter: "", web: "" },
       },
       {
