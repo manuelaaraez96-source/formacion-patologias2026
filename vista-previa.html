@@ -11,14 +11,14 @@
 
   <!-- Open Graph (al compartir en WhatsApp, Facebook, Instagram...) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Principales patologías capilares · Formación Superior Jaldún" />
+  <meta property="og:title" content="Formación superior · Principales anomalías capilares que se encuentran en los centros de imagen personal." />
   <meta property="og:description" content="Tricología aplicada a centros de imagen personal. 28 de septiembre de 2026, Elche. Incluye comida y certificado." />
   <meta property="og:image" content="assets/og-image.jpg" />
   <meta property="og:url" content="https://www.jaldun.com/formacion" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Principales patologías capilares · Formación Superior Jaldún" />
+  <meta name="twitter:title" content="Formación superior · Principales anomalías capilares que se encuentran en los centros de imagen personal." />
   <meta name="twitter:description" content="Tricología aplicada a centros de imagen personal. 28 de septiembre de 2026, Elche." />
   <meta name="twitter:image" content="assets/og-image.jpg" />
 
@@ -679,6 +679,8 @@ const CONFIG = {
      --------------------------------------------------------------------- */
   seo: {
     titulo: "Formación Superior en Tricología | Principales Patologías Capilares · Jaldún",
+    // Título que se muestra al compartir el enlace (WhatsApp, redes...). Si se deja vacío, usa "titulo".
+    tituloCompartir: "Formación superior · Principales anomalías capilares que se encuentran en los centros de imagen personal.",
     descripcion: "Formación presencial para profesionales de peluquería y estética: aprende a detectar las principales patologías capilares y a colaborar en su tratamiento. 28 de septiembre, Elche. Incluye comida y certificado.",
     // URL pública donde estará la web (para compartir en redes)
     url: "https://www.jaldun.com/formacion",
@@ -1052,13 +1054,14 @@ const CONFIG = {
   function renderSEO(c) {
     const s = c.seo;
     document.title = s.titulo;
+    const tituloCompartir = s.tituloCompartir || s.titulo;
     const setMeta = (sel, val) => { const m = $(sel); if (m && val != null) m.setAttribute("content", val); };
     setMeta('meta[name="description"]', s.descripcion);
-    setMeta('meta[property="og:title"]', s.titulo);
+    setMeta('meta[property="og:title"]', tituloCompartir);
     setMeta('meta[property="og:description"]', s.descripcion);
     setMeta('meta[property="og:image"]', s.imagenCompartir);
     setMeta('meta[property="og:url"]', s.url);
-    setMeta('meta[name="twitter:title"]', s.titulo);
+    setMeta('meta[name="twitter:title"]', tituloCompartir);
     setMeta('meta[name="twitter:description"]', s.descripcion);
     setMeta('meta[name="twitter:image"]', s.imagenCompartir);
   }

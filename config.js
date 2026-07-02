@@ -29,6 +29,8 @@ const CONFIG = {
      --------------------------------------------------------------------- */
   seo: {
     titulo: "Formación Superior en Tricología | Principales Patologías Capilares · Jaldún",
+    // Título que se muestra al compartir el enlace (WhatsApp, redes...). Si se deja vacío, usa "titulo".
+    tituloCompartir: "Formación superior · Principales anomalías capilares que se encuentran en los centros de imagen personal.",
     descripcion: "Formación presencial para profesionales de peluquería y estética: aprende a detectar las principales patologías capilares y a colaborar en su tratamiento. 28 de septiembre, Elche. Incluye comida y certificado.",
     // URL pública donde estará la web (para compartir en redes)
     url: "https://www.jaldun.com/formacion",

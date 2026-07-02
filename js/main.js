@@ -58,13 +58,14 @@
   function renderSEO(c) {
     const s = c.seo;
     document.title = s.titulo;
+    const tituloCompartir = s.tituloCompartir || s.titulo;
     const setMeta = (sel, val) => { const m = $(sel); if (m && val != null) m.setAttribute("content", val); };
     setMeta('meta[name="description"]', s.descripcion);
-    setMeta('meta[property="og:title"]', s.titulo);
+    setMeta('meta[property="og:title"]', tituloCompartir);
     setMeta('meta[property="og:description"]', s.descripcion);
     setMeta('meta[property="og:image"]', s.imagenCompartir);
     setMeta('meta[property="og:url"]', s.url);
-    setMeta('meta[name="twitter:title"]', s.titulo);
+    setMeta('meta[name="twitter:title"]', tituloCompartir);
     setMeta('meta[name="twitter:description"]', s.descripcion);
     setMeta('meta[name="twitter:image"]', s.imagenCompartir);
   }
