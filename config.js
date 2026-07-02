@@ -202,7 +202,7 @@ const CONFIG = {
         redes: { linkedin: "", twitter: "", web: "" },
       },
       {
-        foto: "assets/ponente.svg",
+        foto: "assets/ponente-jose.jpg",
         nombre: "José Espinosa",
         cargo: "Nutricionista dietista",
         empresa: "Instituto de Naturopatía",
