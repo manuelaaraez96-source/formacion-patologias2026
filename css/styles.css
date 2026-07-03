@@ -219,6 +219,21 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
 .card__title { font-family: var(--font-serif); font-weight: 600; font-size: 1.3rem; margin-bottom: .55rem; letter-spacing: -.01em; }
 .card__text { color: var(--muted); font-size: .97rem; }
 
+/* Galería de patologías (foto + título) */
+.patho-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.patho-card {
+  background: var(--card); border: 1px solid var(--hairline); border-radius: var(--r);
+  overflow: hidden; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.patho-card:hover { transform: translateY(-6px); border-color: var(--lavender-deep); box-shadow: 0 18px 38px hsl(246 42% 45% / .16); }
+.patho-card__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: var(--paper-2); }
+.patho-card__title {
+  padding: 1rem 1.2rem 1.3rem; text-align: center;
+  font-family: var(--font-serif); font-weight: 600; font-size: 1.02rem; letter-spacing: -.005em;
+}
+@media (max-width: 860px) { .patho-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .patho-grid { grid-template-columns: 1fr; } }
+
 /* Etiqueta (eyebrow) sobre los títulos de sección */
 .eyebrow {
   display: block; font-size: .75rem; font-weight: 600; letter-spacing: .18em;

@@ -65,6 +65,26 @@ const CONFIG = {
   },
 
   /* ---------------------------------------------------------------------
+     3b. GALERÍA DE PATOLOGÍAS (fotos + título, justo antes de "Sobre el curso")
+     --------------------------------------------------------------------- */
+  patologiasGaleria: {
+    etiqueta: "",
+    titulo: "Principales patologías capilares",
+    subtitulo: "Estas son algunas de las patologías que aprenderás a reconocer en la formación.",
+    lista: [
+      { imagen: "assets/patologia-pitiriasis.jpg",              titulo: "Pitiriasis" },
+      { imagen: "assets/patologia-psoriasis.jpg",                titulo: "Psoriasis" },
+      { imagen: "assets/patologia-foliculitis.jpg",              titulo: "Foliculitis" },
+      { imagen: "assets/patologia-areata.jpg",                   titulo: "Alopecia areata" },
+      { imagen: "assets/patologia-frontal-fibrosante.jpg",       titulo: "Alopecia frontal fibrosante" },
+      { imagen: "assets/patologia-cicatricial.jpg",              titulo: "Alopecia cicatricial" },
+      { imagen: "assets/patologia-androgenetica-femenina.jpg",   titulo: "Alopecia androgenética femenina" },
+      { imagen: "assets/patologia-androgenetica-masculina.jpg",  titulo: "Alopecia androgenética masculina" },
+      { imagen: "assets/patologia-tricotilomania.jpg",           titulo: "Tricotilomanía" },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------
      4. SOBRE EL CURSO
      --------------------------------------------------------------------- */
   sobreCurso: {

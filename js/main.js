@@ -167,6 +167,22 @@
     timer = setInterval(tick, 1000);
   }
 
+  function renderPatologiasGaleria(c) {
+    const p = c.patologiasGaleria;
+    if (!p) return;
+    const eyebrow = document.getElementById("patologias-eyebrow");
+    if (eyebrow) { if (p.etiqueta) eyebrow.textContent = p.etiqueta; else eyebrow.style.display = "none"; }
+    setText("patologias-title", p.titulo);
+    const subtitle = document.getElementById("patologias-subtitle");
+    if (subtitle) { if (p.subtitulo) subtitle.textContent = p.subtitulo; else subtitle.style.display = "none"; }
+    const grid = $("#patologias-grid");
+    p.lista.forEach(item => {
+      grid.appendChild(el("div", "patho-card reveal",
+        `<img class="patho-card__img" src="${item.imagen}" alt="${item.titulo}" loading="lazy">
+         <h3 class="patho-card__title">${item.titulo}</h3>`));
+    });
+  }
+
   function renderSobre(c) {
     const s = c.sobreCurso;
     setText("sobre-title", s.titulo);
@@ -372,6 +388,7 @@
     renderMarca(CONFIG);
     renderHero(CONFIG);
     renderTicker(CONFIG);
+    renderPatologiasGaleria(CONFIG);
     renderSobre(CONFIG);
     renderTemario(CONFIG);
     renderPonentes(CONFIG);
