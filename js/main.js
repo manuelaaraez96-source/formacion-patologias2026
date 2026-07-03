@@ -106,17 +106,17 @@
     const img = $("#hero-image");
     if (img) { img.src = h.imagen; img.alt = h.imagenAlt || h.titulo; }
 
-    // Datos clave como bloques etiqueta/valor separados por filetes (igual que eventos.jaldun.com)
+    // Datos clave como píldoras con icono (borde redondeado, sin separadores)
     const meta = $("#hero-meta");
     const metaItems = [
-      { l: "Fecha",     v: h.fecha },
-      { l: "Hora",      v: h.hora },
-      { l: "Modalidad", v: h.modalidad },
-      { l: "Lugar",     v: h.ciudad },
+      { icono: "calendar", v: h.fecha },
+      { icono: "clock",    v: h.hora },
+      { icono: "users",    v: h.modalidad },
+      { icono: "pin",      v: h.ciudad },
     ].filter(p => p.v);
     meta.innerHTML = "";
     metaItems.forEach(p => meta.appendChild(el("div", "hero__meta-item",
-      `<span class="hero__meta-label">${p.l}</span><span class="hero__meta-value">${p.v}</span>`)));
+      `<span class="hero__meta-icon">${iconHTML(p.icono)}</span><span class="hero__meta-value">${p.v}</span>`)));
   }
 
   function renderTicker(c) {
