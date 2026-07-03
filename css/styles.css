@@ -300,12 +300,26 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
 @media (max-width: 460px) { .facts { grid-template-columns: 1fr; } }
 
 /* ---------------------- 9. PONENTES ---------------------- */
-/* Fondo sutil de hebras de cabello para la sección de ponentes */
+/* Fondo con hebras de cabello + degradado y luces suaves, para contrastar con las tarjetas */
 .section--hairs {
+  position: relative; overflow: hidden;
   background-color: #eef0f7;
-  background-image: url(assets/hairs.svg);
-  background-repeat: repeat; background-size: 280px 1000px;
+  background-image: url(assets/hairs.svg), linear-gradient(160deg, var(--lavender-soft) 0%, #eef0f7 45%, var(--paper-2) 100%);
+  background-repeat: repeat, no-repeat;
+  background-size: 360px 720px, 100% 100%;
 }
+.section--hairs::before, .section--hairs::after {
+  content: ""; position: absolute; z-index: 0; pointer-events: none; border-radius: 50%; filter: blur(6px);
+}
+.section--hairs::before {
+  top: -12%; right: -8%; width: 42vw; height: 42vw; max-width: 480px; max-height: 480px;
+  background: radial-gradient(circle, hsl(246 70% 84% / .5), transparent 70%);
+}
+.section--hairs::after {
+  bottom: -16%; left: -10%; width: 38vw; height: 38vw; max-width: 420px; max-height: 420px;
+  background: radial-gradient(circle, hsl(328 55% 85% / .35), transparent 70%);
+}
+.section--hairs > .container { position: relative; z-index: 1; }
 
 .speaker {
   text-align: left; background: rgba(255,255,255,.85);
