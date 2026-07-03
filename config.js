@@ -72,7 +72,7 @@ const CONFIG = {
     titulo: "Principales patologías capilares",
     subtitulo: "Estas son algunas de las patologías que aprenderás a reconocer en la formación.",
     lista: [
-      { imagen: "assets/patologia-pitiriasis.jpg",              titulo: "Pitiriasis" },
+      { imagen: "assets/patologia-pitiriasis.jpg",              titulo: "Pitiriasis amiantácea" },
       { imagen: "assets/patologia-psoriasis.jpg",                titulo: "Psoriasis" },
       { imagen: "assets/patologia-foliculitis.jpg",              titulo: "Foliculitis" },
       { imagen: "assets/patologia-areata.jpg",                   titulo: "Alopecia areata" },
