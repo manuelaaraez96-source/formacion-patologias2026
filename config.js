@@ -238,7 +238,7 @@ const CONFIG = {
         redes: { linkedin: "", twitter: "", web: "" },
       },
       {
-        foto: "assets/ponente.svg",
+        foto: "assets/ponente-miguel.jpg",
         nombre: "Miguel Ángel de Isidro",
         cargo: "Medicina ortomolecular y MTC",
         empresa: "",
