@@ -222,7 +222,7 @@ const CONFIG = {
         redes: { linkedin: "", twitter: "", web: "" },
       },
       {
-        foto: "assets/ponente.svg",
+        foto: "assets/ponente-rosa.jpg",
         nombre: "Dra. Rosa Miralles Gil",
         cargo: "Especialista en salud mental",
         empresa: "",
