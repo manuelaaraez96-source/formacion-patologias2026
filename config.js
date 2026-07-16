@@ -238,7 +238,7 @@ const CONFIG = {
         redes: { linkedin: "", twitter: "", web: "" },
       },
       {
-        foto: "assets/ponente.svg",
+        foto: "assets/ponente-maria.jpg",
         nombre: "María García González",
         cargo: "Bioquímica · Profesora de Imagen Personal",
         empresa: "",
