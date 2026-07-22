@@ -233,7 +233,11 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
   font-family: var(--font-serif); font-weight: 600; font-size: 1.02rem; letter-spacing: -.005em;
 }
 @media (max-width: 860px) { .patho-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 540px) { .patho-grid { grid-template-columns: 1fr; } }
+@media (max-width: 540px) {
+  .patho-grid { grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+  .patho-card__img { aspect-ratio: 1 / 1; }
+  .patho-card__title { padding: .65rem .55rem .85rem; font-size: .82rem; line-height: 1.28; }
+}
 
 /* Etiqueta (eyebrow) sobre los títulos de sección */
 .eyebrow {
