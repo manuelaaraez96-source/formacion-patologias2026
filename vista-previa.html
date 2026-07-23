@@ -294,7 +294,13 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
   box-shadow: 0 18px 38px hsl(246 42% 45% / .18); z-index: 2; border-radius: var(--r);
 }
 @media (max-width: 860px) { .topics { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 540px) { .topics { grid-template-columns: 1fr; } }
+@media (max-width: 540px) {
+  .topics { grid-template-columns: repeat(2, 1fr); }
+  .topics .topic { padding: 1.1rem 1rem 1.3rem; }
+  .topics .topic__num { font-size: 1.2rem; margin-bottom: .4rem; }
+  .topics .card__title { font-size: 1rem; margin-bottom: .35rem; }
+  .topics .card__text { font-size: .82rem; line-height: 1.4; }
+}
 
 .topic__num {
   font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--lavender-deeper);
