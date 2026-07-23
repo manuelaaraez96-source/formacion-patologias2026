@@ -238,6 +238,14 @@ const CONFIG = {
         redes: { linkedin: "", twitter: "", web: "" },
       },
       {
+        foto: "assets/ponente-jesus.jpg",
+        nombre: "Jesús Huertas Duque",
+        cargo: "Consultor de empresas",
+        empresa: "",
+        bio: "Consultor de empresas especializado en estrategia, finanzas, ventas y recursos humanos.",
+        redes: { linkedin: "", twitter: "", web: "" },
+      },
+      {
         foto: "assets/ponente-maria.jpg",
         nombre: "María García González",
         cargo: "Bioquímica · Profesora de Imagen Personal",
