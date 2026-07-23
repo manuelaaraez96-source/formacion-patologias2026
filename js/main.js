@@ -181,6 +181,55 @@
         `<img class="patho-card__img" src="${item.imagen}" alt="${item.titulo}" loading="lazy">
          <h3 class="patho-card__title">${item.titulo}</h3>`));
     });
+    initPatologiasCarousel();
+  }
+
+  // En móvil, #patologias-grid se convierte (por CSS) en un carril con scroll-snap
+  // horizontal. Aquí se conectan las flechas y los puntos de esa tira; en
+  // escritorio/tablet las flechas y puntos están ocultos por CSS y esto no hace nada.
+  function initPatologiasCarousel() {
+    const grid = document.getElementById("patologias-grid");
+    const prevBtn = document.getElementById("patologias-prev");
+    const nextBtn = document.getElementById("patologias-next");
+    const dotsEl = document.getElementById("patologias-dots");
+    if (!grid || !prevBtn || !nextBtn || !dotsEl) return;
+    const cards = Array.from(grid.children);
+    if (!cards.length) return;
+
+    dotsEl.innerHTML = "";
+    const dots = cards.map(() => {
+      const dot = document.createElement("span");
+      dotsEl.appendChild(dot);
+      return dot;
+    });
+    const setActive = (i) => dots.forEach((d, di) => d.classList.toggle("is-active", di === i));
+    setActive(0);
+
+    const scrollToCard = (i) => {
+      const idx = Math.max(0, Math.min(cards.length - 1, i));
+      cards[idx].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    };
+    dots.forEach((dot, i) => dot.addEventListener("click", () => scrollToCard(i)));
+    prevBtn.addEventListener("click", () => {
+      const current = dots.findIndex((d) => d.classList.contains("is-active"));
+      scrollToCard(current - 1);
+    });
+    nextBtn.addEventListener("click", () => {
+      const current = dots.findIndex((d) => d.classList.contains("is-active"));
+      scrollToCard(current + 1);
+    });
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActive(cards.indexOf(entry.target));
+          });
+        },
+        { root: grid, threshold: 0.6 }
+      );
+      cards.forEach((card) => io.observe(card));
+    }
   }
 
   function renderSobre(c) {

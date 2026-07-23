@@ -105,7 +105,16 @@
           <h2 class="section__title" id="patologias-title"></h2>
           <p class="section__subtitle" id="patologias-subtitle"></p>
         </div>
-        <div class="patho-grid" id="patologias-grid"></div>
+        <div class="patho-carousel">
+          <div class="patho-grid" id="patologias-grid"></div>
+          <button class="patho-arrow patho-arrow--prev" id="patologias-prev" type="button" aria-label="Patología anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="patho-arrow patho-arrow--next" id="patologias-next" type="button" aria-label="Siguiente patología">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        <div class="patho-dots" id="patologias-dots"></div>
       </div>
     </section>
 

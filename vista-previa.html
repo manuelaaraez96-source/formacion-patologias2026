@@ -267,10 +267,40 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
   font-family: var(--font-serif); font-weight: 600; font-size: 1.02rem; letter-spacing: -.005em;
 }
 @media (max-width: 860px) { .patho-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Carrusel en móvil: scroll horizontal con snap + flechas + puntos */
+.patho-carousel { position: relative; }
+.patho-arrow { display: none; }
+.patho-dots { display: none; }
 @media (max-width: 540px) {
-  .patho-grid { grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+  .patho-grid {
+    display: flex; grid-template-columns: unset; gap: .9rem;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 6vw;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .patho-grid::-webkit-scrollbar { display: none; }
+  .patho-card { flex: 0 0 76vw; max-width: 76vw; scroll-snap-align: center; }
   .patho-card__img { aspect-ratio: 1 / 1; }
-  .patho-card__title { padding: .65rem .55rem .85rem; font-size: .82rem; line-height: 1.28; }
+  .patho-card__title { padding: .8rem .9rem 1rem; font-size: .95rem; }
+
+  .patho-arrow {
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; top: 38vw; transform: translateY(-50%);
+    width: 38px; height: 38px; padding: 0; border-radius: 50%;
+    background: #fff; border: 1px solid var(--hairline); color: var(--ink);
+    box-shadow: 0 6px 16px rgba(20,21,26,.16); z-index: 2;
+  }
+  .patho-arrow svg { width: 18px; height: 18px; }
+  .patho-arrow--prev { left: 2px; }
+  .patho-arrow--next { right: 2px; }
+  .patho-arrow:disabled { opacity: .3; pointer-events: none; }
+
+  .patho-dots { display: flex; justify-content: center; align-items: center; gap: .4rem; margin-top: 1.1rem; }
+  .patho-dots span {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--hairline);
+    transition: background .2s ease, width .2s ease; flex: 0 0 auto;
+  }
+  .patho-dots span.is-active { background: var(--lavender-deep); width: 16px; border-radius: 3px; }
 }
 
 /* Etiqueta (eyebrow) sobre los títulos de sección */
@@ -606,7 +636,16 @@ src="https://www.facebook.com/tr?id=324836267935139&ev=PageView&noscript=1"
           <h2 class="section__title" id="patologias-title"></h2>
           <p class="section__subtitle" id="patologias-subtitle"></p>
         </div>
-        <div class="patho-grid" id="patologias-grid"></div>
+        <div class="patho-carousel">
+          <div class="patho-grid" id="patologias-grid"></div>
+          <button class="patho-arrow patho-arrow--prev" id="patologias-prev" type="button" aria-label="Patología anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="patho-arrow patho-arrow--next" id="patologias-next" type="button" aria-label="Siguiente patología">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        <div class="patho-dots" id="patologias-dots"></div>
       </div>
     </section>
 
@@ -1281,6 +1320,55 @@ const CONFIG = {
         `<img class="patho-card__img" src="${item.imagen}" alt="${item.titulo}" loading="lazy">
          <h3 class="patho-card__title">${item.titulo}</h3>`));
     });
+    initPatologiasCarousel();
+  }
+
+  // En móvil, #patologias-grid se convierte (por CSS) en un carril con scroll-snap
+  // horizontal. Aquí se conectan las flechas y los puntos de esa tira; en
+  // escritorio/tablet las flechas y puntos están ocultos por CSS y esto no hace nada.
+  function initPatologiasCarousel() {
+    const grid = document.getElementById("patologias-grid");
+    const prevBtn = document.getElementById("patologias-prev");
+    const nextBtn = document.getElementById("patologias-next");
+    const dotsEl = document.getElementById("patologias-dots");
+    if (!grid || !prevBtn || !nextBtn || !dotsEl) return;
+    const cards = Array.from(grid.children);
+    if (!cards.length) return;
+
+    dotsEl.innerHTML = "";
+    const dots = cards.map(() => {
+      const dot = document.createElement("span");
+      dotsEl.appendChild(dot);
+      return dot;
+    });
+    const setActive = (i) => dots.forEach((d, di) => d.classList.toggle("is-active", di === i));
+    setActive(0);
+
+    const scrollToCard = (i) => {
+      const idx = Math.max(0, Math.min(cards.length - 1, i));
+      cards[idx].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    };
+    dots.forEach((dot, i) => dot.addEventListener("click", () => scrollToCard(i)));
+    prevBtn.addEventListener("click", () => {
+      const current = dots.findIndex((d) => d.classList.contains("is-active"));
+      scrollToCard(current - 1);
+    });
+    nextBtn.addEventListener("click", () => {
+      const current = dots.findIndex((d) => d.classList.contains("is-active"));
+      scrollToCard(current + 1);
+    });
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActive(cards.indexOf(entry.target));
+          });
+        },
+        { root: grid, threshold: 0.6 }
+      );
+      cards.forEach((card) => io.observe(card));
+    }
   }
 
   function renderSobre(c) {

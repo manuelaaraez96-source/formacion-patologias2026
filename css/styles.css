@@ -233,10 +233,40 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
   font-family: var(--font-serif); font-weight: 600; font-size: 1.02rem; letter-spacing: -.005em;
 }
 @media (max-width: 860px) { .patho-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Carrusel en móvil: scroll horizontal con snap + flechas + puntos */
+.patho-carousel { position: relative; }
+.patho-arrow { display: none; }
+.patho-dots { display: none; }
 @media (max-width: 540px) {
-  .patho-grid { grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+  .patho-grid {
+    display: flex; grid-template-columns: unset; gap: .9rem;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 6vw;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .patho-grid::-webkit-scrollbar { display: none; }
+  .patho-card { flex: 0 0 76vw; max-width: 76vw; scroll-snap-align: center; }
   .patho-card__img { aspect-ratio: 1 / 1; }
-  .patho-card__title { padding: .65rem .55rem .85rem; font-size: .82rem; line-height: 1.28; }
+  .patho-card__title { padding: .8rem .9rem 1rem; font-size: .95rem; }
+
+  .patho-arrow {
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; top: 38vw; transform: translateY(-50%);
+    width: 38px; height: 38px; padding: 0; border-radius: 50%;
+    background: #fff; border: 1px solid var(--hairline); color: var(--ink);
+    box-shadow: 0 6px 16px rgba(20,21,26,.16); z-index: 2;
+  }
+  .patho-arrow svg { width: 18px; height: 18px; }
+  .patho-arrow--prev { left: 2px; }
+  .patho-arrow--next { right: 2px; }
+  .patho-arrow:disabled { opacity: .3; pointer-events: none; }
+
+  .patho-dots { display: flex; justify-content: center; align-items: center; gap: .4rem; margin-top: 1.1rem; }
+  .patho-dots span {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--hairline);
+    transition: background .2s ease, width .2s ease; flex: 0 0 auto;
+  }
+  .patho-dots span.is-active { background: var(--lavender-deep); width: 16px; border-radius: 3px; }
 }
 
 /* Etiqueta (eyebrow) sobre los títulos de sección */
