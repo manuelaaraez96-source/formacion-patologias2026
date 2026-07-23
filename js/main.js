@@ -181,17 +181,18 @@
         `<img class="patho-card__img" src="${item.imagen}" alt="${item.titulo}" loading="lazy">
          <h3 class="patho-card__title">${item.titulo}</h3>`));
     });
-    initPatologiasCarousel();
+    initCarousel({ gridId: "patologias-grid", prevId: "patologias-prev", nextId: "patologias-next", dotsId: "patologias-dots" });
   }
 
-  // En móvil, #patologias-grid se convierte (por CSS) en un carril con scroll-snap
-  // horizontal. Aquí se conectan las flechas y los puntos de esa tira; en
-  // escritorio/tablet las flechas y puntos están ocultos por CSS y esto no hace nada.
-  function initPatologiasCarousel() {
-    const grid = document.getElementById("patologias-grid");
-    const prevBtn = document.getElementById("patologias-prev");
-    const nextBtn = document.getElementById("patologias-next");
-    const dotsEl = document.getElementById("patologias-dots");
+  // Carrusel genérico con scroll-snap: conecta flechas prev/next y puntos a un
+  // contenedor cuyos hijos directos son las "tarjetas" a mostrar de una en una.
+  // Usado tanto por la galería de patologías (solo móvil, vía CSS) como por
+  // "Convierte la salud capilar..." (siempre, en escritorio y móvil).
+  function initCarousel({ gridId, prevId, nextId, dotsId }) {
+    const grid = document.getElementById(gridId);
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const dotsEl = document.getElementById(dotsId);
     if (!grid || !prevBtn || !nextBtn || !dotsEl) return;
     const cards = Array.from(grid.children);
     if (!cards.length) return;
@@ -243,6 +244,7 @@
          <h3 class="card__title">${b.titulo}</h3>
          <p class="card__text">${b.texto}</p>`));
     });
+    initCarousel({ gridId: "sobre-bloques", prevId: "sobre-prev", nextId: "sobre-next", dotsId: "sobre-dots" });
   }
 
   function renderTemario(c) {

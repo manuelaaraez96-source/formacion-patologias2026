@@ -243,7 +243,39 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 700; letter-sp
   padding: clamp(1.4rem, 3vw, 2rem);
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
-.grid .card:hover { transform: translateY(-6px); border-color: var(--lavender-deep); background: var(--lavender-soft); box-shadow: 0 18px 38px hsl(246 42% 45% / .16); }
+.grid .card:hover, .sobre-grid .card:hover { transform: translateY(-6px); border-color: var(--lavender-deep); background: var(--lavender-soft); box-shadow: 0 18px 38px hsl(246 42% 45% / .16); }
+
+/* "Convierte la salud capilar..." como carrusel de 1 tarjeta, con flechas a los lados (escritorio y móvil) */
+.sobre-carousel { position: relative; padding: 0 3.4rem; }
+.sobre-grid {
+  display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.sobre-grid::-webkit-scrollbar { display: none; }
+.sobre-grid .card { flex: 0 0 100%; max-width: 100%; scroll-snap-align: center; }
+.sobre-arrow {
+  display: flex; align-items: center; justify-content: center;
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 42px; height: 42px; padding: 0; border-radius: 50%; flex: 0 0 auto;
+  background: #fff; border: 1px solid var(--hairline); color: var(--ink);
+  box-shadow: 0 6px 16px rgba(20,21,26,.14); z-index: 2; cursor: pointer;
+}
+.sobre-arrow:hover { border-color: var(--lavender-deep); color: var(--lavender-deeper); }
+.sobre-arrow svg { width: 19px; height: 19px; }
+.sobre-arrow--prev { left: 0; }
+.sobre-arrow--next { right: 0; }
+.sobre-arrow:disabled { opacity: .3; pointer-events: none; }
+.sobre-dots { display: flex; justify-content: center; align-items: center; gap: .4rem; margin-top: 1.4rem; }
+.sobre-dots span {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--hairline); flex: 0 0 auto; cursor: pointer;
+  transition: background .2s ease, width .2s ease;
+}
+.sobre-dots span.is-active { background: var(--lavender-deep); width: 16px; border-radius: 3px; }
+@media (max-width: 540px) {
+  .sobre-carousel { padding: 0 2.6rem; }
+  .sobre-arrow { width: 36px; height: 36px; }
+  .sobre-arrow svg { width: 16px; height: 16px; }
+}
 .card__icon {
   font-size: 1.5rem; line-height: 1; margin-bottom: 1.1rem; color: var(--lavender-deeper);
   width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center;
@@ -656,7 +688,16 @@ src="https://www.facebook.com/tr?id=324836267935139&ev=PageView&noscript=1"
           <h2 class="section__title" id="sobre-title"></h2>
           <p class="section__subtitle" id="sobre-desc"></p>
         </div>
-        <div class="grid grid--2" id="sobre-bloques"></div>
+        <div class="sobre-carousel">
+          <div class="sobre-grid" id="sobre-bloques"></div>
+          <button class="sobre-arrow sobre-arrow--prev" id="sobre-prev" type="button" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="sobre-arrow sobre-arrow--next" id="sobre-next" type="button" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        <div class="sobre-dots" id="sobre-dots"></div>
       </div>
     </section>
 
@@ -1320,17 +1361,18 @@ const CONFIG = {
         `<img class="patho-card__img" src="${item.imagen}" alt="${item.titulo}" loading="lazy">
          <h3 class="patho-card__title">${item.titulo}</h3>`));
     });
-    initPatologiasCarousel();
+    initCarousel({ gridId: "patologias-grid", prevId: "patologias-prev", nextId: "patologias-next", dotsId: "patologias-dots" });
   }
 
-  // En móvil, #patologias-grid se convierte (por CSS) en un carril con scroll-snap
-  // horizontal. Aquí se conectan las flechas y los puntos de esa tira; en
-  // escritorio/tablet las flechas y puntos están ocultos por CSS y esto no hace nada.
-  function initPatologiasCarousel() {
-    const grid = document.getElementById("patologias-grid");
-    const prevBtn = document.getElementById("patologias-prev");
-    const nextBtn = document.getElementById("patologias-next");
-    const dotsEl = document.getElementById("patologias-dots");
+  // Carrusel genérico con scroll-snap: conecta flechas prev/next y puntos a un
+  // contenedor cuyos hijos directos son las "tarjetas" a mostrar de una en una.
+  // Usado tanto por la galería de patologías (solo móvil, vía CSS) como por
+  // "Convierte la salud capilar..." (siempre, en escritorio y móvil).
+  function initCarousel({ gridId, prevId, nextId, dotsId }) {
+    const grid = document.getElementById(gridId);
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const dotsEl = document.getElementById(dotsId);
     if (!grid || !prevBtn || !nextBtn || !dotsEl) return;
     const cards = Array.from(grid.children);
     if (!cards.length) return;
@@ -1382,6 +1424,7 @@ const CONFIG = {
          <h3 class="card__title">${b.titulo}</h3>
          <p class="card__text">${b.texto}</p>`));
     });
+    initCarousel({ gridId: "sobre-bloques", prevId: "sobre-prev", nextId: "sobre-next", dotsId: "sobre-dots" });
   }
 
   function renderTemario(c) {
