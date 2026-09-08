@@ -236,6 +236,7 @@ const CONFIG = {
       },
       {
         foto: "assets/ponente-belen.jpg",
+        video: "assets/ponente-belen-hover.mp4",
         nombre: "María Belén Rozas",
         cargo: "Técnica Capilar",
         empresa: "Jaldún · Málaga",
